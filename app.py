@@ -1,9 +1,15 @@
 # app.py — CSRT + HOG-SVM demo
 import sys, os
-sys.path.append(os.path.dirname(__file__))  
-sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
 
-from src.classifier import HogSvmClassifier
+# Ensure src is always on Python path
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+SRC_DIR = os.path.join(CURRENT_DIR, "src")
+
+if SRC_DIR not in sys.path:
+    sys.path.insert(0, SRC_DIR)
+
+from classifier import HogSvmClassifier
+
 
 
 import cv2
