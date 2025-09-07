@@ -1,10 +1,16 @@
 # app.py — CSRT + HOG-SVM demo
+import sys, os
+sys.path.append(os.path.dirname(__file__))  
+sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
+
+from src.classifier import HogSvmClassifier
+
+
 import cv2
 import numpy as np
 import streamlit as st
 from collections import deque
 
-from .src.classifier import HogSvmClassifier   # if app.py is inside recycle/
 
 from src.tracking import create_csrt, auto_init_bbox
 
