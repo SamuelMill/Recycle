@@ -4,7 +4,8 @@ import numpy as np
 import streamlit as st
 from collections import deque
 
-from src.classifier import HogSvmClassifier
+from .src.classifier import HogSvmClassifier   # if app.py is inside recycle/
+
 from src.tracking import create_csrt, auto_init_bbox
 
 def st_image_safe(ph, img_rgb):
