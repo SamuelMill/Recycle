@@ -7,6 +7,8 @@ from joblib import load
 from skimage.feature import hog
 
 class HogSvmClassifier:
+    ...
+
     def __init__(self, model_path="models/recycle_hog_svm.joblib"):
         self.model_path = str(model_path)
         bundle = load(self.model_path)
